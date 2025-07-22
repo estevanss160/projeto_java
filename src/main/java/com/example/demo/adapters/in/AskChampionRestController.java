@@ -1,5 +1,6 @@
 package com.example.demo.adapters.in;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/champions")
 public record AskChampionRestController(AskChampionUseCase useCase) {
 		
+	@CrossOrigin
 	@PostMapping("/{id}/ask") 
 	public AskChampionResponse AskChampions(
 			@PathVariable("id") Long championId, 
